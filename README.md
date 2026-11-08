@@ -44,10 +44,6 @@ The five-page dashboard explores sales, profit, order volume, customers, product
 - SQL analysis: [sql/sales_explores.sql](sql/sales_explores.sql)
 - Dashboard screenshots: [images/](images/)
 
-## How to use
-
-Restore Microsoft’s [AdventureWorksDW2025 sample database](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2025.bak). Open the SQL file in SQL Server Management Studio or Azure Data Studio and run the questions individually or as a script. Open the Power BI file in Power BI Desktop to explore the report.
-
 ## Notes
 
 AdventureWorks is fictional sample data. The dashboard covers December 2010 to January 2014; several fiscal years are partial, so comparisons should be interpreted with that in mind. Gross profit in the SQL examples is sales less product cost and does not include operating expenses.

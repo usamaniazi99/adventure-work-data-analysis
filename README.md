@@ -1,8 +1,24 @@
-# AdventureWorks Sales Dashboard (Power BI)
+# AdventureWorks Data Analysis
 
-An interactive five page sales report built on Microsoft's fictional AdventureWorks sample data. It explores sales, profit, order volume, channels, customers, products, and seasonal patterns.
+An analytics portfolio project using Microsoft’s fictional AdventureWorks data warehouse to explore sales performance through SQL and Power BI.
 
-## Dashboard preview
+## Business questions
+
+The SQL analysis answers 20 questions, including:
+
+- How do Internet and reseller sales perform over time?
+- Which products, categories, and territories generate the most sales and gross profit?
+- Which customers and resellers contribute the most revenue?
+- How do promotions and product discounts relate to sales?
+- What are the year-over-year trends, monthly running totals, and top-ranked products or customers?
+
+The first 15 queries use basic SQL. The final five introduce CTEs and window functions.
+
+**SQL file:** [sql/sales_explores.sql](sql/sales_explores.sql)
+
+## Power BI dashboard
+
+The five-page dashboard explores sales, profit, order volume, customers, products, territories, and seasonal patterns.
 
 ![Summary dashboard](images/01-summary.png)
 
@@ -15,32 +31,27 @@ An interactive five page sales report built on Microsoft's fictional AdventureWo
 | Highlight Period | How does a selected date range compare with the rest of the year? |
 
 ![Calendar page](images/02-calendar.png)
+
 ![Year-over-year page](images/04-yoy.png)
+
 ![Highlight period page](images/05-highlight.png)
 
-## Analysis and model
+## Project files
 
-- Combined Internet and Reseller sales into a single Sales fact table in Power Query.
-- Built a star schema with Date, Product, Customer, and Reseller dimensions.
-- Added DAX measures for year-over-year change, rolling sales, top product share, and selected-period comparisons.
-- Used a July–June fiscal year; the report opens on FY2013 (July 2012–June 2013).
-- Capped calendar heatmap colors at the 90th percentile to keep outliers from dominating the view.
+- Power BI report: [powerbi-dashboard/AdventureWorks_Sales_Dashboard.pbix](powerbi-dashboard/AdventureWorks_Sales_Dashboard.pbix)
+- PDF dashboard export: [powerbi-dashboard/Adventure_Works.pdf](powerbi-dashboard/Adventure_Works.pdf)
+- Custom Power BI theme: [powerbi-dashboard/aw-warm-clay-v2.json](powerbi-dashboard/aw-warm-clay-v2.json)
+- SQL analysis: [sql/sales_explores.sql](sql/sales_explores.sql)
+- Dashboard screenshots: [images/](images/)
 
-## Files
+## How to use
 
-- Power BI report: AdventureWorks_Sales_Dashboard.pbix
-- PDF export: docs/Adventure_Works.pdf
-- Custom theme: theme/aw-warm-clay-v2.json
-- Page screenshots: images/
+Restore Microsoft’s [AdventureWorksDW2025 sample database](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2025.bak). Open the SQL file in SQL Server Management Studio or Azure Data Studio and run the questions individually or as a script. Open the Power BI file in Power BI Desktop to explore the report.
 
-Open the report in Power BI Desktop. The data is imported into the PBIX, so the report can be explored without connecting to the original database. Refreshing from SQL Server is optional; see the source notes in the PDF for details.
+## Notes
 
-## Data note
+AdventureWorks is fictional sample data. The dashboard covers December 2010 to January 2014; several fiscal years are partial, so comparisons should be interpreted with that in mind. Gross profit in the SQL examples is sales less product cost and does not include operating expenses.
 
-This project uses Microsoft's fictional AdventureWorks sample data, covering December 2010 to January 2014. It does not represent a real company. Several fiscal years are partial, so comparisons should be interpreted with that in mind.
-
-## Tools
-
-Power BI Desktop · DAX · Power Query · SQL Server Express
+**Tools:** SQL Server · Power BI Desktop · DAX · Power Query
 
 **Author:** Muhammad Usama Khan · [LinkedIn](https://linkedin.com/in/u-niazi)
